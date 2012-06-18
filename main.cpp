@@ -6,12 +6,14 @@
 #include <OpenGL/OpenGL.h>
 #include <GLUT/glut.h>
 #else
-#include <GL/glut.h>
+#include <glut.h>
 #include <GL/glu.h>
 #include <GL/gl.h>
-#include <imageloader.h>
-#include <vec3f.h>
+#include "imageloader.h"
+#include "vec3f.h"
 #endif
+
+
 void cylinder(float alas,float atas,float tinggi);
 void kerucut(float ngisor, float nduwur, float dowo);
 void blok(float tebal,int ratiol,int ratiop);
