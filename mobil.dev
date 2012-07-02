@@ -1,7 +1,7 @@
 [Project]
-FileName=terain.dev
+FileName=mobil.dev
 Name=mobil
-UnitCount=8
+UnitCount=10
 Type=1
 Ver=1
 ObjFiles=
@@ -116,6 +116,25 @@ BuildCmd=
 
 [Unit8]
 FileName=vec3f.h
+CompileCpp=1
+Folder=mobil
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=..\..\Downloads\TextureBMPProject\RedLeavesTexture.bmp
+Folder=mobil
+Compile=0
+Link=0
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit10]
+FileName=..\..\Downloads\TextureBMPProject\RgbImage.h
 CompileCpp=1
 Folder=mobil
 Compile=1

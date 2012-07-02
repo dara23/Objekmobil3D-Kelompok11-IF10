@@ -4,18 +4,23 @@
 #include <math.h>
 #ifdef __APPLE__
 #include <OpenGL/OpenGL.h>
-#include <GLUT/glut.h>
+
 #else
-#include <GL/glut.h>
+#include <glut.h>
 #include <GL/glu.h>
 #include <GL/gl.h>
 #include "imageloader.h"
 #include "vec3f.h"
+#include "RgbImage.h"
 #endif
+
+
+
 
 void cylinder(float alas,float atas,float tinggi);
 void kerucut(float ngisor, float nduwur, float dowo);
 void blok(float tebal,int ratiol,int ratiop);
+
 
 GLfloat  source_light[]={0.30,0.30,0.30,0.50};
 double Loop,LoopAll=0;
@@ -444,6 +449,8 @@ glPopMatrix();
 
 
 
+
+
 glTranslatef(0,0,-100);// besar kecilnya mobil
                   
 //Loop++;         
@@ -466,16 +473,14 @@ glColor3f(0.9,0.9,0.9);// warna kaca
 blok(0.5, 20, 31);
                   
 glRotatef(180, 45, -45, 0);
-//glTranslatef(0, 10,0);
-//blok(3, 2, 5);  
-//cylinder(2,2,30);
-//glTranslatef(-10, -10,0);
-//glRotatef(90, 45,-45, 0);
-//cylinder(2,2,30);
-//glRotatef(90, -45, 90, 90);
-//blok(5, 3, 2);  
-                  
+
 glPopMatrix();    
+
+
+
+
+
+                
                   
                   
 glPushMatrix();//roda
@@ -539,14 +544,65 @@ glRotatef(90,1,0,0);
 glTranslatef(-8,3.5,-12);
 blok(2, 4, 8);    
                   
-glColor3f(9.0,0.0,0.0);//lampu atas
+glColor3f(9.0,0.0,1.0);//lampu atas
 glRotatef(0,0,0,0);
 glTranslatef(-8,28,0);
 cylinder(1, 1,12);
 
 
+
+glTranslatef(0,0,-150);
+
+
+glTranslatef(0,-250,0);
+glPushMatrix();//body
+glColor3f(0.0,1.0,1.0);
+blok(5, 10, 15);                  
+glRotatef(180, 45, -45, 0);
+
+
+ 
+
+glPopMatrix();  
+
+
+glTranslatef(0,100,0);// besar kecilnya mobil
+glPushMatrix();//body
+glColor3f(0.0,1.0,1.0);
+blok(5, 10, 15);                  
+glRotatef(180, 45, -45, 0);
+glPopMatrix();  
+
+glTranslatef(0,100,0);// besar kecilnya mobil
+glPushMatrix();//body
+glColor3f(0.0,1.0,1.0);
+blok(5, 10, 15);                  
+glRotatef(180, 45, -45, 0);
 glPopMatrix();
 
+glTranslatef(0,100,0);// besar kecilnya mobil
+glPushMatrix();//body
+glColor3f(0.0,1.0,1.0);
+blok(5, 10, 15);                  
+glRotatef(180, 45, -45, 0);
+glPopMatrix();
+
+glTranslatef(0,100,0);// besar kecilnya mobil
+glPushMatrix();//body
+glColor3f(0.0,1.0,1.0);
+blok(5, 10, 15);                  
+glRotatef(180, 45, -45, 0);
+glPopMatrix();
+
+glTranslatef(0,80,0);// besar kecilnya mobil
+glPushMatrix();//body
+glColor3f(0.0,1.0,1.0);
+blok(5, 10, 15);                  
+glRotatef(180, 45, -45, 0);
+glPopMatrix();
+
+ 
+glPopMatrix();
 
 
 
@@ -723,13 +779,14 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Kelompok 11");
+//	loadTextureFromFile( filename );
 	init();
 
 	glutDisplayFunc(display);
 	glutIdleFunc(display);
 	glutReshapeFunc(reshape);
 	glutSpecialFunc(kibor);
-
+	
 	glutKeyboardFunc(keyboard);
 
 	glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
